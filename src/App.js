@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import 'normalize.css';
+import Header from './components/Header/Header';
+import Main from './components/Main/Main';
+import Footer from './components/Footer/Footer';
+// import axios from 'axios';
 
-function App() {
+import '../src/styles/styles.scss';
+
+import {listContext} from './context/listContext';
+
+export const App = () => {
+  // const [status, setStatus] = useState('initial')
+  const [data, setData] = useState([]);
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+   
+    <BrowserRouter>
+    <listContext.Provider value={{data,setData}}>
+      <Header/>
+      <Main/>
+      </listContext.Provider> 
+      <Footer/>
+    </BrowserRouter>
+    
+     
     </div>
   );
 }
