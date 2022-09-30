@@ -1,0 +1,47 @@
+.pokeForm{
+    background: rgba(56, 119, 138, 0.335);
+    width: 80%;
+    margin: auto;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    form{
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+        label{
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        input{
+            padding: 11px;
+            border-radius: 20px;
+            border: none;
+            background:rgba(56, 119, 138, 0.335);
+            margin-bottom: 10px;
+        }
+        select{
+            border: none;
+            border-radius: 20px;
+            padding: 8px;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        .formButton{
+            background:rgba(32, 160, 199, 0.335);
+            margin-top: 40px;
+            cursor: pointer;
+        }
+        .formButton:hover{
+            filter: brightness(2);
+        }
+    }
+}
+
+.errorMsg{
+    color: rgb(182, 15, 15);
+}
+.submitMsg{
+    font-weight: bold;
+}

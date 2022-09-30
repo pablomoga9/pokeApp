@@ -1,0 +1,47 @@
+.list{
+    padding-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+body{
+    background-image: linear-gradient(to bottom, #ffffff, #c7cbd4, #8b9ca9, #4d707b, #09474a);
+}
+.createPokemon{
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 20px;
+    border: solid;
+    border-width: 2px;
+    border-color: #4d707b4e;
+    background: rgba(0, 255, 60, 0.608);
+    margin-bottom: 40px;
+}
+.searchList{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.searchInput{
+    border-radius: 20px;
+    padding: 10px;
+    border: solid;
+    border-width: 2px;
+    border-color: rgba(4, 71, 0, 0.286);
+    outline: none;
+}
+.listMsg{
+    color: rgb(97, 0, 0);
+    margin: 20px 40px 20px 40px;
+}
+
+h3{
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 22px 17px -1px rgba(0,0,0,0.75);
+    margin: 10px;
+    background-image: linear-gradient(to bottom, #348c22, #00864f, #007d6d, #00727b, #1e6578);
+    }

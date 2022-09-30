@@ -1,32 +1,40 @@
-import React, { Component, useContext } from "react";
+import React, { useContext, useState } from "react";
 import {useForm} from 'react-hook-form';
 import { listContext } from "../../../context/listContext";
 
 const Form = () =>{
   const {register,formState:{errors},handleSubmit} = useForm();
   const {data,setData} = useContext(listContext);
+  const [message,setMessage] = useState('');
 
   const onSubmit = (form)=>{
-    setData([...data,form])
+    if(form.typeOne===form.typeTwo){
+      setMessage('No puedes crear un pokemon con dos tipos iguales')
+    }
+    else{
+      setMessage('Tu pokemon ha sido creado correctamente');
+      setData([...data,form])
+    }
+    
   }
 
-  return <div>
+  return <div className="pokeForm">
     <h2>Crea tu Pokemon</h2>
     <form onSubmit={handleSubmit(onSubmit)}>
       <label htmlFor="id">ID:</label>
       <input type="number" placeholder="12345" {...register('id',{
         required:true
-      })}/>{errors.id?.type==='required' && <p>El campo ID es requerido</p>}
+      })}/>{errors.id?.type==='required' && <p className="errorMsg">El campo ID es requerido</p>}
       <label htmlFor="name">Nombre:</label>
       <input type="text" {...register('name',{
         required:true,
         minLength: 3
-      })}/>{errors.name?.type==='required' && <p>El campo nombre es requerido</p>}
-      {errors.name?.type==='minLength' && <p>El campo nombre debe tener más de 3 caracteres</p>}
+      })}/>{errors.name?.type==='required' && <p className="errorMsg">El campo nombre es requerido</p>}
+      {errors.name?.type==='minLength' && <p className="errorMsg">El campo nombre debe tener más de 3 caracteres</p>}
       <label htmlFor="image">Imagen:</label>
       <input type="text" {...register('image',{
         required:true
-      })}/>{errors.image?.type==='required' && <p>El campo imagen es requerido</p>}
+      })}/>{errors.image?.type==='required' && <p className="errorMsg">El campo imagen es requerido</p>}
       <label htmlFor="typeOne">Tipo 1:</label>
       <select id="type1" {...register('typeOne')}>
         <option value="acero">Acero</option>
@@ -69,7 +77,8 @@ const Form = () =>{
         <option value="veneno">Veneno</option>
         <option value="volador">Volador</option>
       </select>
-      <input type="submit" value="Enviar"/>
+      <input type="submit" className="formButton" value="Enviar"/>
+      <p className="submitMsg">{message}</p>
     </form>
   </div>
 }

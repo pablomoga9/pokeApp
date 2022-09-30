@@ -53,7 +53,7 @@ const Home=()=> {
       <div className="home">
         <h1>Lista Pokemon</h1>
         <div className="fullList">
-            {data.map((pokemon,i)=><div data-aos="fade-up" data-aos-duration="3000"><Link to={`/pokemon/${i}`}><img src="https://www.freeiconspng.com/thumbs/pokeball-png/file-pokeball-png-0.png" alt="" /><h3>{pokemon.name}</h3></Link></div>)}
+            {data.map((pokemon,i)=><div data-aos="fade-up" data-aos-duration="3000"><Link to={`/pokemon/${i}`}><h3>{pokemon.name}</h3></Link></div>)}
         </div>
         
       </div>

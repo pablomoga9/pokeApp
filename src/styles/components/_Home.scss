@@ -1,0 +1,39 @@
+.home{
+   
+   
+    padding-top: 30px;
+   
+   
+}
+
+body{
+  background-image: linear-gradient(to bottom, #ffffff, #c7cbd4, #8b9ca9, #4d707b, #09474a);
+}
+
+// body{
+    
+//     background-color: #cccccc;
+    
+// }
+
+.fullList{
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  
+  align-items: center;
+//   a{
+//     text-decoration: none;
+//     color: black;
+//     cursor: pointer;
+//   }
+  
+  h3{
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 22px 17px -1px rgba(0,0,0,0.75);
+    margin: 10px;
+    background-image: linear-gradient(to bottom, #348c22, #00864f, #007d6d, #00727b, #1e6578);
+    }
+}
+
