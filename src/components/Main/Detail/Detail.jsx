@@ -22,7 +22,7 @@ const Detail = ()=>{
         // phrase: resTwo.data.flavour_text_entries[0].flavour_text
       }
 
-      setPokemon(pokeInfo);
+      setPokemon(pokeInfo)
     }
     detailFetch();
   },[])
